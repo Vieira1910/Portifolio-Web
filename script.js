@@ -73,35 +73,33 @@ function filterTools(category) {
 // === 5. DADOS E MODAL DE PROJETOS ===
 
 const projectsData = {
-    techland: {
-        title: 'Verus Barber Studio',
-        subtitle: 'Landing Page & Sistema de Barbearia',
-        description: 'Uma landing page moderna desenvolvida para barbearia, focada em conversão, apresentação de serviços, tabela de preços e agendamento rápido.',
-        techs: ['HTML5', 'CSS3 Grid', 'JavaScript', 'Vercel'],
-        image: 'Imagens do portifólio/Verus_Barber.png',
-        platform: 'github',
-        github: 'https://github.com/Vieira1910/VerusBarberStudio',
-        demo: 'https://verusbarberstudio.vercel.app/'
-    },
-    dashboard: {
+    'Memphis-Grizzlies-Fan-Page': {
         title: 'Memphis Grizzlies Fan Page',
         subtitle: 'Portal de Basquete & Fan Community',
         description: 'Interface de conteúdo dedicado ao Memphis Grizzlies, trazendo estatísticas, história, elenco e layout personalizado em dark mode.',
         techs: ['HTML5', 'CSS3 Grid', 'JavaScript ES6', 'Vercel'],
         image: 'Imagens do portifólio/Memphis_Grizzlies.png',
-        platform: 'gitlab',
         gitlab: 'https://gitlab.com/vieira-group1/memphisgrizzlies/',
         demo: 'https://memphisgrizzlies.vercel.app/'
     },
-    taskapp: {
-        title: 'TaskFlow App',
-        subtitle: 'Aplicação de Gerenciamento Pessoal',
-        description: 'Aplicação web leve para organização de tarefas diárias com persistência de dados no LocalStorage do navegador, filtros por status e prioridades.',
-        techs: ['JavaScript ES6+', 'CSS Variables', 'GitHub', 'GitLab'],
-        image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80',
-        github: 'https://github.com',
-        demo: 'https://vercel.com'
-    }
+    'Verus-Barber-Studio': {
+        title: 'Verus Barber Studio',
+        subtitle: 'Landing Page & Sistema de Barbearia',
+        description: 'Uma landing page moderna desenvolvida para barbearia, focada em conversão, apresentação de serviços, tabela de preços e agendamento rápido.',
+        techs: ['HTML5', 'CSS3 Grid', 'JavaScript', 'Vercel'],
+        image: 'Imagens do portifólio/Verus_Barber.png',
+        github: 'https://github.com/Vieira1910/VerusBarberStudio',
+        demo: 'https://verusbarberstudio.vercel.app/'
+    },
+    // taskapp: {
+    //     title: 'TaskFlow App',
+    //     subtitle: 'Aplicação de Gerenciamento Pessoal',
+    //     description: 'Aplicação web leve para organização de tarefas diárias com persistência de dados no LocalStorage do navegador, filtros por status e prioridades.',
+    //     techs: ['JavaScript ES6+', 'CSS Variables', 'GitHub', 'GitLab'],
+    //     image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80',
+    //     github: 'https://github.com',
+    //     demo: 'https://vercel.com'
+    // }
 };
 
 function openProjectModal(projectId) {
