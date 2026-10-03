@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Portfólio | Desenvolvedor Front-End</title>
+    <link rel="shortcut icon" href="Imagens do portifólio/LOGO.png" type="image/x-icon">
+    
+    <!-- Fontes Externas: Inter & Space Grotesk via Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Ícones: FontAwesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Vincular o Arquivo CSS Externo -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="relative min-h-screen text-zinc-200 antialiased selection:bg-white selection:text-black">
+
+    <!-- Efeito de Luz de Fundo Guiada pelo Mouse -->
+    <div id="mouse-spotlight"></div>
+
+    <!-- ==================== NAVEGAÇÃO FIXA (HEADER) ==================== -->
+    <header class="fixed top-0 left-0 right-0 z-40 bg-black/70 backdrop-blur-xl border-b border-zinc-800/80 transition-all duration-300">
+        <div class="h-[0.0625rem] w-full bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
+        
+        <div class="max-w-[80rem] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-[4.375rem] sm:h-[5rem]">
+                
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-2.5 sm:gap-3 group focus:outline-none focus:ring-2 focus:ring-white rounded-lg p-1">
+                    <div class="w-[2.25rem] h-[2.25rem] sm:w-[2.5rem] sm:h-[2.5rem] rounded-xl bg-gradient-to-br from-white via-zinc-200 to-zinc-600 flex items-center justify-center text-black font-black text-base sm:text-lg shadow-lg group-hover:scale-105 transition-transform duration-300">
+                        &lt;/&gt;
+                    </div>
+                    <span class="font-display text-base sm:text-lg font-bold tracking-tight text-white group-hover:text-zinc-300 transition-colors">
+                        Dev<span class="text-zinc-500">.Portfolio</span>
+                    </span>
+                </a>
+
+                <!-- Links Desktop -->
+                <nav class="hidden md:flex items-center gap-6 lg:gap-8 text-xs sm:text-sm font-medium">
+                    <a href="#sobre" class="nav-link">Sobre Mim</a>
+                    <a href="#ferramentas" class="nav-link">Ferramentas</a>
+                    <a href="#projetos" class="nav-link">Projetos</a>
+                    <a href="#contato" class="nav-link">Contato</a>
+                </nav>
+
+                <!-- Botão CTA Desktop -->
+                <div class="hidden md:flex items-center gap-4">
+                    <a href="#contato" class="px-4 lg:px-5 py-2.5 rounded-xl bg-white text-black font-semibold text-xs sm:text-sm hover:bg-zinc-200 transition-all hover:shadow-[0_0_1.25rem_rgba(255,255,255,0.3)] active:scale-95">
+                        Vamos Conversar
+                    </a>
+                </div>
+
+                <!-- Botão Menu Hambúrguer (Mobile) -->
+                <button id="mobile-menu-btn" 
+                        aria-label="Abrir menu de navegação" 
+                        class="md:hidden w-[2.75rem] h-[2.75rem] rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-white flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-white active:scale-95 transition-transform">
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+
+            </div>
+        </div>
+
+        <!-- Menu Mobile Drawer -->
+        <div id="mobile-drawer" class="hidden md:hidden bg-zinc-950/98 border-b border-zinc-800 px-4 pt-4 pb-6 space-y-3 backdrop-blur-2xl shadow-2xl transition-all">
+            <a href="#sobre" onclick="closeMobileMenu()" class="block px-4 py-3 rounded-xl text-sm font-medium text-zinc-300 hover:bg-zinc-900 hover:text-white transition-colors active:bg-zinc-800">Sobre Mim</a>
+            <a href="#ferramentas" onclick="closeMobileMenu()" class="block px-4 py-3 rounded-xl text-sm font-medium text-zinc-300 hover:bg-zinc-900 hover:text-white transition-colors active:bg-zinc-800">Ferramentas</a>
+            <a href="#projetos" onclick="closeMobileMenu()" class="block px-4 py-3 rounded-xl text-sm font-medium text-zinc-300 hover:bg-zinc-900 hover:text-white transition-colors active:bg-zinc-800">Projetos</a>
+            <a href="#contato" onclick="closeMobileMenu()" class="block px-4 py-3 rounded-xl text-sm font-medium text-zinc-300 hover:bg-zinc-900 hover:text-white transition-colors active:bg-zinc-800">Contato</a>
+            <a href="#contato" onclick="closeMobileMenu()" class="block w-full text-center py-3.5 mt-2 rounded-xl bg-white text-black font-semibold text-sm shadow-md active:scale-95">
+                Falar Comigo
+            </a>
+        </div>
+    </header>
+
+    <!-- ==================== SEÇÃO HERO ==================== -->
+    <section class="relative min-h-[90vh] sm:min-h-screen pt-[7rem] sm:pt-[9rem] pb-[4rem] sm:pb-[5rem] flex items-center justify-center overflow-hidden">
+        <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[18.75rem] sm:w-[31.25rem] h-[18.75rem] sm:h-[31.25rem] bg-white/5 rounded-full blur-[5rem] sm:blur-[8.75rem] pointer-events-none"></div>
+
+        <div class="max-w-[62.5rem] mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-zinc-900/90 border border-zinc-800 text-xs sm:text-xs font-medium text-zinc-300 mb-6 sm:mb-8 backdrop-blur-md shadow-xl">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>Desenvolvedor Front-End</span>
+            </div>
+
+            <h1 class="font-display text-3xl xs:text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white mb-5 sm:mb-6 leading-tight sm:leading-none">
+                Construindo interfaces simples, <br class="hidden sm:block">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-300 to-zinc-500">
+                    modernas e de alto impacto.
+                </span>
+            </h1>
+
+            <p class="text-sm sm:text-base md:text-lg text-zinc-400 max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed px-2">
+                Especialista em transformar protótipos do Figma em código limpo, rápido e responsivo utilizando HTML, CSS, JavaScript, GitHub, GitLab e Vercel.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 w-full sm:w-auto px-2">
+                <a href="#projetos" class="w-full sm:w-auto px-7 sm:px-8 py-3.5 sm:py-4 rounded-xl bg-white text-black font-semibold text-xs sm:text-sm hover:bg-zinc-200 transition-all shadow-[0_0_1.875rem_rgba(255,255,255,0.15)] hover:shadow-[0_0_2.5rem_rgba(255,255,255,0.3)] flex items-center justify-center gap-2.5 active:scale-95">
+                    <span>Ver Meus Projetos</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+                <a href="https://web.whatsapp.com/" class="w-full sm:w-auto px-7 sm:px-8 py-3.5 sm:py-4 rounded-xl bg-zinc-900 border border-zinc-800 text-white font-semibold text-xs sm:text-sm hover:bg-zinc-800 hover:border-zinc-700 transition-all flex items-center justify-center gap-2.5 active:scale-95">
+                    <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i>
+                    <span>Contato Direto</span>
+                </a>
+            </div>
+
+            <div class="mt-12 sm:mt-16 pt-6 sm:pt-8 border-t border-zinc-800/60 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-[0.6875rem] sm:text-xs text-zinc-500 uppercase tracking-widest font-semibold">
+                <span class="flex items-center gap-1.5"><i class="fa-brands fa-html5 text-orange-500 text-xs sm:text-sm"></i> HTML5</span>
+                <span class="flex items-center gap-1.5"><i class="fa-brands fa-css3-alt text-blue-500 text-xs sm:text-sm"></i> CSS3</span>
+                <span class="flex items-center gap-1.5"><i class="fa-brands fa-js text-yellow-400 text-xs sm:text-sm"></i> JavaScript</span>
+                <span class="flex items-center gap-1.5"><i class="fa-brands fa-figma text-purple-400 text-xs sm:text-sm"></i> Figma</span>
+                <span class="flex items-center gap-1.5"><i class="fa-brands fa-github text-white text-xs sm:text-sm"></i> GitHub</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SEÇÃO SOBRE MIM ==================== -->
+    <section id="sobre" class="py-16 sm:py-24 max-w-[80rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 border-t border-zinc-900">
+        <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            
+            <div class="lg:col-span-5">
+                <div onclick="toggleProfilePhoto()" 
+                     class="relative rounded-2xl bg-zinc-900 border border-zinc-800 p-2.5 sm:p-3 glass-card overflow-hidden cursor-pointer group select-none transition-transform hover:scale-[1.01]">
+                    
+                    <div class="relative w-full h-[20rem] sm:h-[25rem] lg:h-[26.25rem] overflow-hidden rounded-xl bg-zinc-950">
+                        <img id="profile-img" 
+                             data-photo1="Imagens do portifólio/foto 1.jpeg" 
+                             data-photo2="Imagens do portifólio/foto 2.jpeg" 
+                             alt="Foto do Desenvolvedor" 
+                             class="w-full h-full object-cover filter grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500">
+                        
+                        <div class="absolute top-3 right-3 px-3 py-1.5 rounded-full bg-black/80 backdrop-blur-md border border-zinc-700/80 text-[0.6875rem] font-medium text-white flex items-center gap-2 shadow-lg group-hover:border-white/50 transition-colors">
+                            <i class="fa-solid fa-arrows-rotate text-xs animate-spin-slow"></i>
+                            <span id="photo-badge-text">Clique para alternar a foto</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-2.5 sm:mt-3 p-3.5 sm:p-4 rounded-xl bg-black/80 backdrop-blur-md border border-zinc-800/80 flex items-center justify-between">
+                        <div>
+                            <p class="text-[0.6875rem] sm:text-xs text-zinc-400">Desenvolvimento Web</p>
+                            <p class="text-xs sm:text-sm font-bold text-white">HTML5, CSS3, JS & Figma</p>
+                        </div>
+                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-zinc-800 flex items-center justify-center text-white text-xs sm:text-sm">
+                            <i class="fa-solid fa-camera"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 space-y-5 sm:space-y-6">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-xs text-zinc-400">
+                    <i class="fa-solid fa-user text-white text-xs"></i>
+                    <span>Quem Sou Eu</span>
+                </div>
+
+                <h2 class="font-display text-2xl sm:text-4xl font-bold text-white tracking-tight leading-snug sm:leading-tight">
+                    Focado em código limpo, design intuitivo e interfaces fluidas.
+                </h2>
+
+                <p class="text-zinc-400 text-sm sm:text-base leading-relaxed">
+                    Sou desenvolvedor front-end dedicado a transformar protótipos e telas desenhadas no Figma em código real, semanticamente correto e totalmente adaptável a qualquer tamanho de tela.
+                </p>
+
+                <p class="text-zinc-400 text-sm sm:text-base leading-relaxed">
+                    Trabalho no dia a dia com a tríade fundamental da web (<strong>HTML5, CSS3 e JavaScript Vanilla</strong>) e utilizo <strong>GitHub, GitLab e Vercel</strong> para controle de versão, publicação e deploy contínuo de projetos.
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4 pt-2 sm:pt-4">
+                    <div class="p-4 rounded-xl bg-zinc-900/60 border border-zinc-800/80">
+                        <div class="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-white mb-2.5">
+                            <i class="fa-solid fa-mobile-screen"></i>
+                        </div>
+                        <h4 class="text-sm font-bold text-white mb-1">100% Responsivo</h4>
+                        <p class="text-xs text-zinc-400">Layouts perfeitos em smartphones, tablets e monitores desktop.</p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-zinc-900/60 border border-zinc-800/80">
+                        <div class="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-white mb-2.5">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+                        <h4 class="text-sm font-bold text-white mb-1">Fidelidade ao Figma</h4>
+                        <p class="text-xs text-zinc-400">Transposição exata de tipografia, espaçamentos e cores do design.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==================== SEÇÃO FERRAMENTAS ==================== -->
+    <section id="ferramentas" class="py-16 sm:py-24 bg-zinc-950 border-t border-b border-zinc-900 relative overflow-hidden">
+        <div class="max-w-[80rem] mx-auto px-4 sm:px-6 lg:px-8 mb-8 sm:mb-12 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-xs text-zinc-400 mb-3 sm:mb-4">
+                <i class="fa-solid fa-code text-white text-xs"></i>
+                <span>Minhas Ferramentas</span>
+            </div>
+            
+            <h2 class="font-display text-2xl sm:text-4xl font-bold text-white tracking-tight mb-3 sm:mb-4">
+                Tecnologias que Domino e Utilizo
+            </h2>
+
+            <p class="text-zinc-400 text-xs sm:text-sm max-w-xl mx-auto mb-6 sm:mb-8 px-2">
+                Clique nos filtros abaixo para destacar as ferramentas específicas que utilizo no meu fluxo de trabalho diário.
+            </p>
+
+            <div class="flex flex-wrap items-center justify-center gap-2 max-w-xl mx-auto">
+                <button onclick="filterTools('all')" class="tool-filter-btn min-h-[2.5rem] px-3.5 sm:px-4 py-2 rounded-xl text-xs font-semibold bg-white text-black transition-all active:scale-95" data-category="all">
+                    Todas (7)
+                </button>
+                <button onclick="filterTools('web')" class="tool-filter-btn min-h-[2.5rem] px-3.5 sm:px-4 py-2 rounded-xl text-xs font-semibold bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-700 transition-all active:scale-95" data-category="web">
+                    Web Essentials
+                </button>
+                <button onclick="filterTools('git')" class="tool-filter-btn min-h-[2.5rem] px-3.5 sm:px-4 py-2 rounded-xl text-xs font-semibold bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-700 transition-all active:scale-95" data-category="git">
+                    Versionamento
+                </button>
+                <button onclick="filterTools('deploy')" class="tool-filter-btn min-h-[2.5rem] px-3.5 sm:px-4 py-2 rounded-xl text-xs font-semibold bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-700 transition-all active:scale-95" data-category="deploy">
+                    Design & Deploy
+                </button>
+            </div>
+        </div>
+
+        <div class="relative w-full overflow-hidden marquee-container py-2 sm:py-4">
+            <div class="absolute top-0 bottom-0 left-0 w-[3rem] sm:w-[6rem] bg-gradient-to-r from-zinc-950 to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute top-0 bottom-0 right-0 w-[3rem] sm:w-[6rem] bg-gradient-to-l from-zinc-950 to-transparent z-10 pointer-events-none"></div>
+
+            <div class="flex gap-4 sm:gap-6 w-max animate-marquee marquee-content">
+                <div class="tool-card flex items-center gap-3.5 sm:gap-4 px-5 sm:px-6 py-3.5 sm:py-4 rounded-2xl bg-zinc-900/80 border border-zinc-800/80 min-w-[11.25rem] sm:min-w-[12.5rem] glass-card" data-category="web">
+                    <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-500 text-lg sm:text-xl">
+                        <i class="fa-brands fa-html5"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs sm:text-sm font-bold text-white">HTML5</p>
+                        <p class="text-[0.625rem] sm:text-[0.6875rem] text-zinc-500">Semântico & Acessível</p>
+                    </div>
+                </div>
+
+                <div class="tool-card flex items-center gap-3.5 sm:gap-4 px-5 sm:px-6 py-3.5 sm:py-4 rounded-2xl bg-zinc-900/80 border border-zinc-800/80 min-w-[11.25rem] sm:min-w-[12.5rem] glass-card" data-category="web">
+                    <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-500 text-lg sm:text-xl">
+                        <i class="fa-brands fa-css3-alt"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs sm:text-sm font-bold text-white">CSS3</p>
+                        <p class="text-[0.625rem] sm:text-[0.6875rem] text-zinc-500">Flexbox & Grid</p>
+                    </div>
+                </div>
+
+                <div class="tool-card flex items-center gap-3.5 sm:gap-4 px-5 sm:px-6 py-3.5 sm:py-4 rounded-2xl bg-zinc-900/80 border border-zinc-800/80 min-w-[11.25rem] sm:min-w-[12.5rem] glass-card" data-category="web">
+                    <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center text-yellow-400 text-lg sm:text-xl">
+                        <i class="fa-brands fa-js"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs sm:text-sm font-bold text-white">JavaScript</p>
+                        <p class="text-[0.625rem] sm:text-[0.6875rem] text-zinc-500">ES6+ & DOM</p>
+                    </div>
+                </div>
+
+                <div class="tool-card flex items-center gap-3.5 sm:gap-4 px-5 sm:px-6 py-3.5 sm:py-4 rounded-2xl bg-zinc-900/80 border border-zinc-800/80 min-w-[11.25rem] sm:min-w-[12.5rem] glass-card" data-category="deploy">
+                    <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 text-lg sm:text-xl">
+                        <i class="fa-brands fa-figma"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs sm:text-sm font-bold text-white">Figma</p>
+                        <p class="text-[0.625rem] sm:text-[0.6875rem] text-zinc-500">UI/UX & Protótipos</p>
+                    </div>
+                </div>
+
+                <div class="tool-card flex items-center gap-3.5 sm:gap-4 px-5 sm:px-6 py-3.5 sm:py-4 rounded-2xl bg-zinc-900/80 border border-zinc-800/80 min-w-[11.25rem] sm:min-w-[12.5rem] glass-card" data-category="git">
+                    <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white text-lg sm:text-xl">
+                        <i class="fa-brands fa-github"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs sm:text-sm font-bold text-white">GitHub</p>
+                        <p class="text-[0.625rem] sm:text-[0.6875rem] text-zinc-500">Repositórios & Git</p>
+                    </div>
+                </div>
+
+                <div class="tool-card flex items-center gap-3.5 sm:gap-4 px-5 sm:px-6 py-3.5 sm:py-4 rounded-2xl bg-zinc-900/80 border border-zinc-800/80 min-w-[11.25rem] sm:min-w-[12.5rem] glass-card" data-category="git">
+                    <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-orange-600/10 border border-orange-600/20 flex items-center justify-center text-orange-500 text-lg sm:text-xl">
+                        <i class="fa-brands fa-gitlab"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs sm:text-sm font-bold text-white">GitLab</p>
+                        <p class="text-[0.625rem] sm:text-[0.6875rem] text-zinc-500">Versionamento</p>
+                    </div>
+                </div>
+
+                <div class="tool-card flex items-center gap-3.5 sm:gap-4 px-5 sm:px-6 py-3.5 sm:py-4 rounded-2xl bg-zinc-900/80 border border-zinc-800/80 min-w-[11.25rem] sm:min-w-[12.5rem] glass-card" data-category="deploy">
+                    <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white text-lg sm:text-xl">
+                        <i class="fa-solid fa-triangle-circle-square"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs sm:text-sm font-bold text-white">Vercel</p>
+                        <p class="text-[0.625rem] sm:text-[0.6875rem] text-zinc-500">Deploy & Hospedagem</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SEÇÃO PROJETOS ==================== -->
+    <section id="projetos" class="py-16 sm:py-24 max-w-[80rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 gap-4 sm:gap-6">
+            <div>
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-xs text-zinc-400 mb-2.5 sm:mb-3">
+                    <i class="fa-solid fa-laptop-code text-white text-xs"></i>
+                    <span>Portfólio</span>
+                </div>
+                <h2 class="font-display text-2xl sm:text-4xl font-bold text-white tracking-tight">
+                    Projetos Recentes
+                </h2>
+            </div>
+            <p class="text-zinc-400 text-xs sm:text-sm max-w-md">
+                Clique em qualquer card abaixo para ver detalhes sobre o projeto, tecnologias utilizadas e links de visualização.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <!-- Card 1 -->
+            <div onclick="openProjectModal('techland')" 
+                 class="group glass-card rounded-2xl overflow-hidden border border-zinc-800/80 cursor-pointer transition-all duration-300 hover:-translate-y-2 active:scale-[0.98]">
+                <div class="relative h-[11.25rem] sm:h-[13rem] overflow-hidden bg-zinc-950">
+                    <img src="Imagens do portifólio/BANNER.png" alt="TechLand Store" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter grayscale contrast-125 group-hover:grayscale-0">
+                    <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/80 backdrop-blur-md text-[0.625rem] sm:text-[0.6875rem] font-semibold text-white border border-zinc-700">HTML + CSS</div>
+                </div>
+                <div class="p-5 sm:p-6 space-y-3 sm:space-y-4">
+                    <h3 class="font-display text-lg sm:text-xl font-bold text-white group-hover:text-zinc-300 transition-colors flex items-center justify-between">
+                        <span>Verus Barbearia</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs text-zinc-500 group-hover:text-white transition-colors"></i>
+                    </h3>
+                    <p class="text-zinc-400 text-xs sm:text-sm line-clamp-2">Landing page moderna de produtos tech com design minimalista, carrinho interativo e suporte mobile completo.</p>
+                    <div class="flex flex-wrap gap-1.5 sm:gap-2 pt-1 sm:pt-2">
+                        <span class="px-2.5 py-1 rounded-md bg-zinc-900 border border-zinc-800 text-[0.625rem] sm:text-[0.6875rem] text-zinc-300">HTML5</span>
+                        <span class="px-2.5 py-1 rounded-md bg-zinc-900 border border-zinc-800 text-[0.625rem] sm:text-[0.6875rem] text-zinc-300">CSS3 Grid</span>
+                        <span class="px-2.5 py-1 rounded-md bg-zinc-900 border border-zinc-800 text-[0.625rem] sm:text-[0.6875rem] text-zinc-300">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div onclick="openProjectModal('dashboard')" 
+                 class="group glass-card rounded-2xl overflow-hidden border border-zinc-800/80 cursor-pointer transition-all duration-300 hover:-translate-y-2 active:scale-[0.98]">
+                <div class="relative h-[11.25rem] sm:h-[13rem] overflow-hidden bg-zinc-950">
+                    <img src="Imagens do portifólio/PLANO_DE_FUNDO.png" alt="Analytics Dashboard" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter grayscale contrast-125 group-hover:grayscale-0">
+                    <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/80 backdrop-blur-md text-[0.625rem] sm:text-[0.6875rem] font-semibold text-white border border-zinc-700">HTML5 + CSS3 & JS</div>
+                </div>
+                <div class="p-5 sm:p-6 space-y-3 sm:space-y-4">
+                    <h3 class="font-display text-lg sm:text-xl font-bold text-white group-hover:text-zinc-300 transition-colors flex items-center justify-between">
+                        <span>Torcida Memphis Grizzlies</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs text-zinc-500 group-hover:text-white transition-colors"></i>
+                    </h3>
+                    <p class="text-zinc-400 text-xs sm:text-sm line-clamp-2">Painel de métricas com gráficos responsivos, modo escuro nativo e filtros de dados com JavaScript vanilla.</p>
+                    <div class="flex flex-wrap gap-1.5 sm:gap-2 pt-1 sm:pt-2">
+                        <span class="px-2.5 py-1 rounded-md bg-zinc-900 border border-zinc-800 text-[0.625rem] sm:text-[0.6875rem] text-zinc-300">HTML5</span>
+                        <span class="px-2.5 py-1 rounded-md bg-zinc-900 border border-zinc-800 text-[0.625rem] sm:text-[0.6875rem] text-zinc-300">CSS Flexbox</span>
+                        <span class="px-2.5 py-1 rounded-md bg-zinc-900 border border-zinc-800 text-[0.625rem] sm:text-[0.6875rem] text-zinc-300">JS ES6</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3
+            <div onclick="openProjectModal('taskapp')" 
+                 class="group glass-card rounded-2xl overflow-hidden border border-zinc-800/80 cursor-pointer transition-all duration-300 hover:-translate-y-2 active:scale-[0.98]">
+                <div class="relative h-[11.25rem] sm:h-[13rem] overflow-hidden bg-zinc-950">
+                    <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80" alt="TaskFlow App" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter grayscale contrast-125 group-hover:grayscale-0">
+                    <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/80 backdrop-blur-md text-[0.625rem] sm:text-[0.6875rem] font-semibold text-white border border-zinc-700">Web App</div>
+                </div>
+                <div class="p-5 sm:p-6 space-y-3 sm:space-y-4">
+                    <h3 class="font-display text-lg sm:text-xl font-bold text-white group-hover:text-zinc-300 transition-colors flex items-center justify-between">
+                        <span>TaskFlow App</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs text-zinc-500 group-hover:text-white transition-colors"></i>
+                    </h3>
+                    <p class="text-zinc-400 text-xs sm:text-sm line-clamp-2">Gerenciador de tarefas pessoal com armazenamento no LocalStorage, ordenação por prioridades e visual clean.</p>
+                    <div class="flex flex-wrap gap-1.5 sm:gap-2 pt-1 sm:pt-2">
+                        <span class="px-2.5 py-1 rounded-md bg-zinc-900 border border-zinc-800 text-[0.625rem] sm:text-[0.6875rem] text-zinc-300">JavaScript</span>
+                        <span class="px-2.5 py-1 rounded-md bg-zinc-900 border border-zinc-800 text-[0.625rem] sm:text-[0.6875rem] text-zinc-300">CSS Variables</span>
+                        <span class="px-2.5 py-1 rounded-md bg-zinc-900 border border-zinc-800 text-[0.625rem] sm:text-[0.6875rem] text-zinc-300">GitHub</span>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </section>
+
+   <!-- ==================== SEÇÃO CONTATO ==================== -->
+<section id="contato" class="py-16 sm:py-24 bg-zinc-950 border-t border-zinc-900 relative">
+    <div class="max-w-[80rem] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-xs text-zinc-400 mb-3">
+                <i class="fa-solid fa-paper-plane text-white text-xs"></i>
+                <span>Contato Direto</span>
+            </div>
+            <h2 class="font-display text-2xl sm:text-4xl font-bold text-white tracking-tight mb-3 sm:mb-4">
+                Vamos Conversar sobre o seu Projeto
+            </h2>
+            <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed px-2">
+                Sinta-se à vontade para me chamar em qualquer uma das minhas redes abaixo ou me enviar uma mensagem direta no WhatsApp!
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            <!-- GitLab (Substituiu o E-mail) -->
+            <a href="https://gitlab.com/dashboard/projects" target="_blank" rel="noopener" 
+               class="p-5 sm:p-6 rounded-2xl bg-zinc-900/60 border border-zinc-800/80 glass-card flex flex-col justify-between space-y-5 sm:space-y-6 group">
+                <div class="space-y-2.5 sm:space-y-3">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-500 text-lg sm:text-xl">
+                        <i class="fa-brands fa-gitlab"></i>
+                    </div>
+                    <h4 class="font-display text-base sm:text-lg font-bold text-white">GitLab</h4>
+                    <p class="text-xs text-zinc-400">Repositórios e código-fonte.</p>
+                </div>
+                <div class="w-full min-h-[2.75rem] py-2.5 px-4 rounded-xl bg-orange-500/10 border border-orange-500/20 text-orange-400 font-semibold text-xs transition-colors flex items-center justify-center gap-2 group-hover:bg-orange-500 group-hover:text-black">
+                    <span>Acessar GitLab</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                </div>
+            </a>
+
+            <!-- WhatsApp -->
+            <a href="https://web.whatsapp.com/" target="_blank" rel="noopener" 
+               class="p-5 sm:p-6 rounded-2xl bg-zinc-900/60 border border-zinc-800/80 glass-card flex flex-col justify-between space-y-5 sm:space-y-6 group">
+                <div class="space-y-2.5 sm:space-y-3">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 text-lg sm:text-xl">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <h4 class="font-display text-base sm:text-lg font-bold text-white">WhatsApp</h4>
+                    <p class="text-xs text-zinc-400">Contato direto e imediato.</p>
+                </div>
+                <div class="w-full min-h-[2.75rem] py-2.5 px-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-semibold text-xs transition-colors flex items-center justify-center gap-2 group-hover:bg-emerald-500 group-hover:text-black">
+                    <span>Iniciar Conversa</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                </div>
+            </a>
+
+            <!-- GitHub -->
+            <a href="https://github.com/Vieira1910" target="_blank" rel="noopener" 
+               class="p-5 sm:p-6 rounded-2xl bg-zinc-900/60 border border-zinc-800/80 glass-card flex flex-col justify-between space-y-5 sm:space-y-6 group">
+                <div class="space-y-2.5 sm:space-y-3">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white text-lg sm:text-xl">
+                        <i class="fa-brands fa-github"></i>
+                    </div>
+                    <h4 class="font-display text-base sm:text-lg font-bold text-white">GitHub</h4>
+                    <p class="text-xs text-zinc-400">Veja meus repositórios e códigos.</p>
+                </div>
+                <div class="w-full min-h-[2.75rem] py-2.5 px-4 rounded-xl bg-zinc-800 text-white font-semibold text-xs transition-colors flex items-center justify-center gap-2 group-hover:bg-white group-hover:text-black">
+                    <span>Ver Repositórios</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                </div>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/dev_vieiraa/" target="_blank" rel="noopener" 
+               class="p-5 sm:p-6 rounded-2xl bg-zinc-900/60 border border-zinc-800/80 glass-card flex flex-col justify-between space-y-5 sm:space-y-6 group">
+                <div class="space-y-2.5 sm:space-y-3">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-pink-400 text-lg sm:text-xl">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+                    <h4 class="font-display text-base sm:text-lg font-bold text-white">Instagram</h4>
+                    <p class="text-xs text-zinc-400">Acompanhe meus estudos e projetos.</p>
+                </div>
+                <div class="w-full min-h-[2.75rem] py-2.5 px-4 rounded-xl bg-pink-500/10 border border-pink-500/20 text-pink-400 font-semibold text-xs transition-colors flex items-center justify-center gap-2 group-hover:bg-pink-500 group-hover:text-black">
+                    <span>Seguir Perfil</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+    <!-- Modal Flutuante para Projetos -->
+    <div id="project-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-3 sm:p-4 bg-black/80 backdrop-blur-md">
+        <div id="project-modal-content" class="relative w-full max-w-2xl bg-zinc-900 border border-zinc-800 rounded-2xl p-5 sm:p-8 space-y-5 sm:space-y-6 shadow-2xl overflow-y-auto max-h-[88vh]">
+            <!-- Preenchido via JavaScript -->
+        </div>
+    </div>
+
+    <!-- Vincular o Arquivo JavaScript Externo (no final do body) -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+/* === RESET E VARIÁVEIS DE CORES === */
+:root {
+    --bg-dark: #050507;
+    --card-dark: #0a0a0c;
+    --surface-dark: #121216;
+    --border-dark: #27272a;
+    --text-main: #f4f4f5;
+    --text-muted: #a1a1aa;
+}
+
+html {
+    font-size: 100%; /* 1rem = 16px */
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-dark);
+    position: relative;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* === SPOTLIGHT SEGUIDOR DE MOUSE === */
+#mouse-spotlight {
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 37.5rem;  /* 600px */
+    height: 37.5rem; /* 600px */
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
+/* Desativa spotlight em dispositivos móveis touch */
+@media (hover: none) and (pointer: coarse) {
+    #mouse-spotlight {
+        display: none;
+    }
+}
+
+/* === GLASSMORPHISM CARDS === */
+.glass-card {
+    background: rgba(18, 18, 22, 0.75);
+    backdrop-filter: blur(0.75rem);
+    -webkit-backdrop-filter: blur(0.75rem);
+    border: 0.0625rem solid rgba(255, 255, 255, 0.08);
+    border-radius: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.glass-card:hover {
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0.625rem 1.875rem -0.625rem rgba(255, 255, 255, 0.08);
+}
+
+/* === CUSTOM SCROLLBAR === */
+::-webkit-scrollbar {
+    width: 0.5rem;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--border-dark);
+    border-radius: 0.25rem;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #3f3f46;
+}
+
+/* === CARROSSEL INFINITO (MARQUEE) === */
+@keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+    animation: marquee 20s linear infinite;
+}
+
+.marquee-container:hover .marquee-content {
+    animation-play-state: paused;
+}
+
+/* === LINKS DE NAVEGAÇÃO === */
+.nav-link {
+    position: relative;
+    padding-bottom: 0.25rem;
+    color: var(--text-muted);
+    transition: color 0.2s ease;
+}
+.nav-link:hover {
+    color: #ffffff;
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 0.125rem;
+    background-color: #ffffff;
+    transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* === REVELAÇÃO SUAVE EM ROLAGEM === */
+.reveal-item {
+    opacity: 0;
+    transform: translateY(1.25rem);
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-item.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* === AJUSTE PARA TELAS MUITO PEQUENAS (< 375px) === */
+@media (max-width: 23.4375rem) {
+    html {
+        font-size: 87.5%;
+    }
+}
