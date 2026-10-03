@@ -78,7 +78,7 @@ const projectsData = {
         subtitle: 'Landing Page & Sistema de Barbearia',
         description: 'Uma landing page moderna desenvolvida para barbearia, focada em conversão, apresentação de serviços, tabela de preços e agendamento rápido.',
         techs: ['HTML5', 'CSS3 Grid', 'JavaScript', 'Vercel'],
-        image: 'Imagens do portifólio/BANNER.png',
+        image: 'Imagens do portifólio/Verus_Barber.png',
         platform: 'github',
         github: 'https://github.com/Vieira1910/VerusBarberStudio',
         demo: 'https://verusbarberstudio.vercel.app/'
@@ -88,7 +88,7 @@ const projectsData = {
         subtitle: 'Portal de Basquete & Fan Community',
         description: 'Interface de conteúdo dedicado ao Memphis Grizzlies, trazendo estatísticas, história, elenco e layout personalizado em dark mode.',
         techs: ['HTML5', 'CSS3 Grid', 'JavaScript ES6', 'Vercel'],
-        image: 'Imagens do portifólio/PLANO_DE_FUNDO.png',
+        image: 'Imagens do portifólio/Memphis_Grizzlies.png',
         platform: 'gitlab',
         gitlab: 'https://gitlab.com/vieira-group1/memphisgrizzlies/',
         demo: 'https://memphisgrizzlies.vercel.app/'
