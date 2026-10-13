@@ -86,20 +86,20 @@ const projectsData = {
         title: 'Verus Barber Studio',
         subtitle: 'Landing Page & Sistema de Barbearia',
         description: 'Uma landing page moderna desenvolvida para barbearia, focada em conversão, apresentação de serviços, tabela de preços e agendamento rápido.',
-        techs: ['HTML5', 'CSS3 Grid', 'JavaScript', 'Vercel'],
+        techs: ['HTML5', 'CSS3 Grid', 'JavaScript ES6', 'Vercel'],
         image: 'Imagens do portifólio/Verus_Barber.png',
         github: 'https://github.com/Vieira1910/VerusBarberStudio',
         demo: 'https://verusbarberstudio.vercel.app/'
     },
-    // taskapp: {
-    //     title: 'TaskFlow App',
-    //     subtitle: 'Aplicação de Gerenciamento Pessoal',
-    //     description: 'Aplicação web leve para organização de tarefas diárias com persistência de dados no LocalStorage do navegador, filtros por status e prioridades.',
-    //     techs: ['JavaScript ES6+', 'CSS Variables', 'GitHub', 'GitLab'],
-    //     image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80',
-    //     github: 'https://github.com',
-    //     demo: 'https://vercel.com'
-    // }
+    'Corinthians': {
+    title: 'Corinthians',
+    subtitle: 'Portal da Fiel & Hub Corinthiano',
+    description: 'Aplicação web interativa dedicada ao Sport Club Corinthians Paulista, apresentando conteúdo dinâmico, identidade visual imersiva, vídeos em destaque e seções exclusivas para a torcida.',
+    techs: ['HTML5', 'CSS3', 'GitHub', 'JavaScript ES6', 'Vercel'],
+    image: 'Imagens do portifólio/Corinthians.jpg',
+    github: 'https://github.com/Vieira1910/Corinthians',
+    demo: 'https://corinthians-phi.vercel.app/'
+}
 };
 
 function openProjectModal(projectId) {
